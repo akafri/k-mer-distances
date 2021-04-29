@@ -18,11 +18,15 @@ class KmerCounter:
         return self._count_without_reverse_complement(nucleutides)
 
     def _count_with_reverse_complement(self, nucleutides):
+        if self._k > len(nucleutides):
+            raise Exception("cannot count k-mers for k={} larger than nucleutides length={}"
+                            .format(self._k, len(nucleutides)))
+
         print("START - counting kmers with reverse complement")
         kmers_dictionary = KmersIterator(self._k, True).get_kmers_dictionary()
-        for i in range(len(nucleutides) - self._k):
+        for i in range(len(nucleutides) - self._k + 1):
             kmer = nucleutides[i:i + self._k]
-            if all(c in nucleutides for c in kmer):
+            if all(c in valid_nucleutides for c in kmer):
                 reversed_complement_kmer = reverse_complement(kmer)
                 if kmer in kmers_dictionary.keys():
                     kmers_dictionary[kmer] += 2
@@ -32,9 +36,13 @@ class KmerCounter:
         return kmers_dictionary
 
     def _count_without_reverse_complement(self, nucleutides):
+        if self._k > len(nucleutides):
+            raise Exception("cannot count k-mers for k={} larger than nucleutides length={}"
+                            .format(self._k, len(nucleutides)))
+
         print("START - counting kmers without reverse complement")
         kmers_dictionary = KmersIterator(self._k, False).get_kmers_dictionary()
-        for i in range(len(nucleutides) - self._k):
+        for i in range(len(nucleutides) - self._k + 1):
             kmer = nucleutides[i:i + self._k]
             if all(nucleutide in valid_nucleutides for nucleutide in kmer):
                 kmers_dictionary[kmer] += 1

@@ -18,7 +18,7 @@ class KmersIterator:
         return kmers_dictionary
 
     def iterator(self):
-        kmers = [0 for i in range(self._k)]
+        kmers = [0 for _ in range(self._k)]
         cnt = 0
         index = self._k - 1
         while cnt < 4 ** self._k:
