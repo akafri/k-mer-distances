@@ -20,5 +20,5 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        find pylint `ls -R|grep .py$|xargs`
+        find . -name "*.py" | grep -v "init" | xargs pylint
 
