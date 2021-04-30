@@ -18,13 +18,13 @@ if __name__ == '__main__':
     if len(sys.argv) != 5:
         raise Exception("Not enough parameters supplied. Expected parameters are: [first_fasta_file_path] "
                         "[second_fasta_file_path] [k] [working_directory]")
-    first_fast_file = sys.argv[1]
-    if not os.path.exists(first_fast_file):
-        raise Exception("Path {} does not exist".format(first_fast_file))
+    first_fasta_file_path = sys.argv[1]
+    if not os.path.exists(first_fasta_file_path):
+        raise Exception("Path {} does not exist".format(first_fasta_file_path))
 
-    second_fast_file = sys.argv[2]
-    if not os.path.exists(second_fast_file):
-        raise Exception("Path {} does not exist".format(second_fast_file))
+    second_fasta_file_path = sys.argv[2]
+    if not os.path.exists(second_fasta_file_path):
+        raise Exception("Path {} does not exist".format(second_fasta_file_path))
 
     k = int(sys.argv[3])
     if k < 1 or k > 10:
@@ -34,4 +34,7 @@ if __name__ == '__main__':
     if not os.path.exists(working_directory):
         raise Exception("Path {} does not exist".format(working_directory))
 
-    main(first_fast_file, second_fast_file, k, working_directory)
+    main(first_fasta_file_path=first_fasta_file_path,
+         second_fasta_file_path=second_fasta_file_path,
+         k=k,
+         working_directory=working_directory)

@@ -4,11 +4,7 @@ from kmers_counter import *
 
 class KmersVectorDistance:
 
-    def __init__(self,
-                 first_fasta_file_path,
-                 second_fasta_file_path,
-                 k,
-                 working_directory):
+    def __init__(self, first_fasta_file_path, second_fasta_file_path, k, working_directory):
         self._first_fasta_file_path = first_fasta_file_path
         self._second_fasta_file_path = second_fasta_file_path
         self._k = k
@@ -44,6 +40,7 @@ class KmersVectorDistance:
 
 
 class KmersVector:
+
     def __init__(self, fasta_file_path, k, reversed_complement, working_directory):
         self._fasta_file_path = fasta_file_path
         self._k = k
@@ -64,9 +61,10 @@ class KmersVector:
 
 
 class VectorsDistance:
+
     def __init__(self, first_kmers_vector, second_kmers_vector):
-        self._vector_a = first_kmers_vector
-        self._vector_b = second_kmers_vector
+        self._first_kmer_vector = first_kmers_vector
+        self._second_kmer_vector = second_kmers_vector
 
     def get_distance(self):
-        return np.linalg.norm(self._vector_a - self._vector_b, ord=1)
+        return np.linalg.norm(self._first_kmer_vector - self._second_kmer_vector, ord=1)

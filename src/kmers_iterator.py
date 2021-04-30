@@ -1,7 +1,6 @@
-from nucleutide import *
-
-
 class KmersIterator:
+
+    valid_nucleutides = ['A', 'C', 'G', 'T']
 
     def __init__(self, k):
         self._k = k
@@ -19,7 +18,7 @@ class KmersIterator:
         index = self._k - 1
         while cnt < 4 ** self._k:
             cnt += 1
-            yield ''.join([valid_nucleutides[kmers[i]] for i in range(len(kmers))])
+            yield ''.join([self.valid_nucleutides[kmers[i]] for i in range(len(kmers))])
             kmers[index] += 1
 
             for i in range(index, 0, -1):
