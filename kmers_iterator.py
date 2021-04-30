@@ -3,18 +3,14 @@ from nucleutide import *
 
 class KmersIterator:
 
-    def __init__(self, k, reversed_complement):
+    def __init__(self, k):
         self._k = k
-        self._reverse_complement = reversed_complement
 
     def get_kmers_dictionary(self):
         kmers_iterator_instance = self.iterator()
         kmers_dictionary = dict()
         for kmer in kmers_iterator_instance:
-            if not self._reverse_complement:
-                kmers_dictionary[kmer] = 0
-            elif kmer not in kmers_dictionary and reverse_complement(kmer) not in kmers_dictionary:
-                kmers_dictionary[kmer] = 0
+            kmers_dictionary[kmer] = 0
         return kmers_dictionary
 
     def iterator(self):
