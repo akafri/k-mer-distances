@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import os
 import sys
 
 from distance import *
@@ -33,6 +34,9 @@ if __name__ == '__main__':
     working_directory = sys.argv[4]
     if not os.path.exists(working_directory):
         raise Exception("Path {} does not exist".format(working_directory))
+
+    if os.system("which jellyfish") != 0:
+        raise Exception("Jellyfish is not installed")
 
     main(first_fasta_file_path=first_fasta_file_path,
          second_fasta_file_path=second_fasta_file_path,

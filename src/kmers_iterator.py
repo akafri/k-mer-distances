@@ -6,11 +6,7 @@ class KmersIterator:
         self._k = k
 
     def get_kmers_dictionary(self):
-        kmers_iterator_instance = self.iterator()
-        kmers_dictionary = dict()
-        for kmer in kmers_iterator_instance:
-            kmers_dictionary[kmer] = 0
-        return kmers_dictionary
+        return {kmer: 0 for kmer in self.iterator()}
 
     def iterator(self):
         kmers = [0 for _ in range(self._k)]

@@ -4,15 +4,17 @@ import kmers_iterator
 
 
 class KmersMerger:
+
     def __init__(self, results_file_path, k):
         self._results_file_path = results_file_path
         self._k = k
 
-    def merge_kmers(self):
+    def merge(self):
+        kmers_dictionary = kmers_iterator.KmersIterator(self._k).get_kmers_dictionary()
+
         with open(self._results_file_path, 'r') as f:
             lines = f.readlines()
 
-        kmers_dictionary = kmers_iterator.KmersIterator(self._k).get_kmers_dictionary()
         for line in lines:
             kmer, count = line.split(' ')
             count = int(count)
