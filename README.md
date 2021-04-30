@@ -1,7 +1,7 @@
 # kmers-distance
 A python program to calculate D1, D2 distances as described in () for fasta files.
 
-#Prerequisites
+# Prerequisites
 This program was tested on Ubuntu 20.0.4 using Python 3. 
 Follow these steps before running it:
 1. Install Python 3 
@@ -22,7 +22,7 @@ Follow these steps before running it:
    ```
     or follow the installation instructions here [Jellyfish](https://github.com/gmarcais/Jellyfish) 
 
-#Usage
+# Usage
 To run this program, have the fasta files prepared on your filesystem. 
 Run the following command:
 ```
