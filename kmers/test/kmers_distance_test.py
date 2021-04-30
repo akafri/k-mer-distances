@@ -1,14 +1,13 @@
-from kmers.src.distance import KmersVectorDistance
+import unittest
 import os
 import sys
-import unittest
 
-print(sys.path)
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+from kmers.src.distance import KmersVectorDistance
 
 
 class KmersDistanceTest(unittest.TestCase):
-
     RESOURCES_FOLDER_NAME = "resources"
 
     def test_d1_and_d2_distances(self):

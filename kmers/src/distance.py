@@ -57,8 +57,7 @@ class KmersVector:
         length = sum(kmers_values)
         if length != 0:
             return np.array(kmers_values) / length
-        else:
-            return np.array(kmers_values)
+        return np.array(kmers_values)
 
 
 class VectorsDistance:
