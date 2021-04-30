@@ -1,5 +1,5 @@
 # kmers-distance
-A python program to calculate D1, D2 distances as described in () for fasta files.
+A python program to calculate D1, D2 distances as described [here](http://horn.tau.ac.il/publications/alon_thesis.pdf) for fasta files.
 
 # Prerequisites
 This program was tested on Ubuntu 20.0.4 using Python 3. 
