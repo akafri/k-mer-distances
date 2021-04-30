@@ -1,6 +1,6 @@
 import operator
 
-import kmers_iterator
+from . import kmers_iterator
 
 
 class KmersMerger:

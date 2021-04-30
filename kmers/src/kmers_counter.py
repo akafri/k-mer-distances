@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-from kmers_merger import KmersMerger
-from jellyfish_executor import JellyfishExecutor
+from .kmers_merger import KmersMerger
+from .jellyfish_executor import JellyfishExecutor
 
 
 class KmerCounter:

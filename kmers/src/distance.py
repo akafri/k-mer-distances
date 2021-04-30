@@ -1,5 +1,6 @@
 import numpy as np
-from kmers_counter import *
+
+from .kmers_counter import KmerCounter
 
 
 class KmersVectorDistance:

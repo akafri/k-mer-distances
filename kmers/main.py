@@ -2,7 +2,7 @@
 import os
 import sys
 
-from distance import *
+from src.distance import *
 
 
 def main(first_fasta_file_path, second_fasta_file_path, k, working_directory):
